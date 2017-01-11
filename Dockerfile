@@ -2,6 +2,6 @@ FROM tutum/lamp:latest
 ADD mysql-setup.sh /mysql-setup.sh
 ADD create_table.sql /create_table.sql
 RUN chmod 755 /mysql-setup.sh
-RUN rm -rf /app && git clone https://github.com/up1/workshop-php.git /temp
+RUN rm -rf /app && git clone https://github.com/up1/workshop-php.git /temp && cp -rf /temp/src /app
 EXPOSE 80 3306
 CMD ["/run.sh"]
